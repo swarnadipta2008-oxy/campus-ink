@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Submit and track campus printing requests.">
+  <title>Track Requests | Campus Ink</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-content">
+      <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span>Campus Ink</a>
+      <nav aria-label="Main navigation">
+        <a href="index.html">Dashboard</a>
+        <a href="submit.html">Submit Request</a>
+        <a href="track.html" aria-current="page">Track Requests</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="panel" id="requests" aria-labelledby="requests-title">
+      <div class="card-heading">
+        <h1 id="requests-title">Track requests</h1>
+        <button type="button" class="secondary" id="refresh-requests">Refresh requests</button>
+      </div>
+      <div class="field-row filters">
+        <div>
+          <label for="search">Search requests</label>
+          <input type="search" id="search" placeholder="Name, document or ID">
+        </div>
+        <div>
+          <label for="filter">Status</label>
+          <select id="filter">
+            <option value="">All statuses</option>
+            <option>Submitted</option>
+            <option>Printing</option>
+            <option>Ready for pickup</option>
+          </select>
+        </div>
+      </div>
+      <p id="list-message" class="message" role="status"></p>
+      <p id="empty-message" class="empty" hidden>No requests yet. <a href="submit.html">Submit a request</a>.</p>
+      <p id="no-results" class="empty" hidden>No requests match your search or filter.</p>
+      <ul id="request-list"></ul>
+    </section>
+  </main>
+
+  <footer class="container">
+    Campus Ink · CSE326 Internet Programming
+    <small class="copyright">© 2026 Syntax Squad</small>
+  </footer>
+
+  <template id="request-card">
+    <li class="request-card">
+      <div class="card-heading">
+        <div>
+          <p class="request-id"></p>
+          <h3></h3>
+        </div>
+        <span class="badge"></span>
+      </div>
+      <p class="details"></p>
+      <div class="card-actions">
+        <a class="button secondary download" hidden>Download document</a>
+        <a class="button secondary edit">Edit details</a>
+        <button type="button" class="secondary advance"></button>
+      </div>
+    </li>
+  </template>
+</body>
+</html>

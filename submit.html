@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Submit and track campus printing requests.">
+  <title>Submit Request | Campus Ink</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-content">
+      <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span>Campus Ink</a>
+      <nav aria-label="Main navigation">
+        <a href="index.html">Dashboard</a>
+        <a href="submit.html" aria-current="page">Submit Request</a>
+        <a href="track.html">Track Requests</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container submit-layout">
+    <aside class="submit-guide" aria-labelledby="guide-title">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <h2 id="guide-title">From file to pickup</h2>
+      <p>Submit your document and choose how you want it printed. Once you have a request ID, check its progress on the tracking page.</p>
+      <ol class="guide-steps">
+        <li>Submitted</li>
+        <li>Printing</li>
+        <li>Ready for pickup</li>
+      </ol>
+      <a href="track.html">Go to Track Requests</a>
+    </aside>
+    <section class="panel" id="new-request" aria-labelledby="form-title">
+      <h1 id="form-title">Submit a request</h1>
+      <form id="request-form">
+        <fieldset>
+          <legend>Document details</legend>
+          <div class="field-row">
+            <div>
+              <label for="student">Student name</label>
+              <input id="student" name="student" autocomplete="name" maxlength="60" required>
+            </div>
+            <div>
+              <label for="student-id">Student ID</label>
+              <input id="student-id" name="studentId" placeholder="Registration number" maxlength="32" required>
+            </div>
+            <div class="document-name-field">
+              <label for="document">Document name</label>
+              <input id="document" name="document" placeholder="e.g. Lab report" maxlength="100" required>
+            </div>
+          </div>
+
+          <div class="upload-box">
+            <label for="attachment">Document file</label>
+            <input id="attachment" name="attachment" type="file" accept=".pdf,.doc,.docx" aria-describedby="attachment-help" required>
+            <p id="attachment-help" class="field-help">PDF or Word (.doc, .docx), up to 1 MB. Files are saved in this browser.</p>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Print settings</legend>
+          <div class="field-row">
+            <div>
+              <label for="copies">Copies</label>
+              <input id="copies" name="copies" type="number" min="1" max="50" value="1" required>
+            </div>
+            <div>
+              <label for="mode">Print mode</label>
+              <select id="mode" name="mode">
+                <option>Black and white</option>
+                <option>Colour</option>
+              </select>
+            </div>
+            <div>
+              <label for="paper-size">Paper size</label>
+              <select id="paper-size" name="paperSize">
+                <option>A4</option>
+                <option>A3</option>
+                <option>A5</option>
+                <option>Letter</option>
+                <option>Legal</option>
+              </select>
+            </div>
+          </div>
+          <fieldset class="print-sides">
+            <legend>Print on</legend>
+            <div class="field-row">
+              <label class="side-option">
+                <input type="radio" name="sides" value="one" checked>
+                <span>One side <small>Front of each sheet</small></span>
+              </label>
+              <label class="side-option">
+                <input type="radio" name="sides" value="two">
+                <span>Both sides <small>Front and back of each sheet</small></span>
+              </label>
+            </div>
+          </fieldset>
+        </fieldset>
+
+        <div class="form-actions">
+          <button type="submit" id="submit-button" disabled>Submit request</button>
+          <a href="track.html" class="button secondary" id="cancel-edit" hidden>Cancel edit</a>
+        </div>
+      </form>
+      <a href="track.html" id="view-requests" hidden>View your requests</a>
+      <p id="form-message" class="message" role="status"></p>
+    </section>
+
+  </main>
+
+  <footer class="container">
+    Campus Ink · CSE326 Internet Programming
+    <small class="copyright">© 2026 Syntax Squad</small>
+  </footer>
+
+</body>
+</html>

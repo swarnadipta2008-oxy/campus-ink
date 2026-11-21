@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Submit and track campus printing requests.">
+  <title>Dashboard | Campus Ink</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-content">
+      <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span>Campus Ink</a>
+      <nav aria-label="Main navigation">
+        <a href="index.html" aria-current="page">Dashboard</a>
+        <a href="submit.html">Submit Request</a>
+        <a href="track.html">Track Requests</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="intro" aria-labelledby="page-title">
+      <p class="course">CSE326 · Syntax Squad</p>
+      <h1 id="page-title">Campus Printing<br>Request Portal</h1>
+      <p class="demo-note">Classroom demo · Requests are saved in this browser.</p>
+      <div class="form-actions dashboard-actions">
+        <a class="button" href="submit.html">Submit a request</a>
+        <a class="button secondary" href="track.html">Track requests</a>
+      </div>
+    </section>
+
+    <h2>Request dashboard</h2>
+    <section class="summary" aria-label="Request summary">
+      <div><span>Total requests</span><strong id="total">0</strong></div>
+      <div><span>Submitted</span><strong id="submitted">0</strong></div>
+      <div><span>Printing</span><strong id="printing">0</strong></div>
+      <div><span>Ready for pickup</span><strong id="ready">0</strong></div>
+    </section>
+
+    <p id="dashboard-message" class="message" role="status"></p>
+  </main>
+
+  <footer class="container">
+    Campus Ink · CSE326 Internet Programming
+    <small class="copyright">© 2026 Syntax Squad</small>
+  </footer>
+
+</body>
+</html>
